@@ -1,0 +1,23 @@
+{%extends 'base.html' %}
+{%block content %}
+
+<article>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          
+          <h1 class="section-heading">{{post.title}}</h1>
+          <p>{{post.body}}</p>
+          <hr/>
+          <p class="post-meta">Posted by
+            <span style="font-weight: bold;">{{post.author}}</span>
+            on {{post.post_date}}</p>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <hr> 
+
+
+{%endblock%}

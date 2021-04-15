@@ -1,0 +1,35 @@
+{%extends 'base.html' %}
+{%block content %}
+<div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        {%for post in posts%}
+        <div class="post-preview">
+          <a href="/{{post.id}}">
+            <h2 class="post-title">
+              {{post.title}}
+            </h2>
+            <h3 class="post-subtitle">
+              {{post.sub_title}}
+            </h3>
+          </a>
+          <p class="post-meta">Posted by
+            <a href="#">{{post.author}}</a>
+            on {{post.post_date}}</p>
+        </div>
+        <hr>
+        {%endfor%}
+        <div class="clearfix">
+          {% if posts.has_previous %}
+          <a class="btn btn-primary float-left" href="?page={{ posts.previous_page_number }}">&larr; Previous Posts</a>
+          {%endif%}
+          {% if posts.has_next %}
+          <a class="btn btn-primary float-right" href="?page={{ posts.next_page_number }}">Older Posts &rarr;</a>
+          {%endif%}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr>
+{%endblock%}
